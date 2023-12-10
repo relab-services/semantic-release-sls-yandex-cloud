@@ -8,7 +8,9 @@ async function prepare(config: Config) {
   const configPath = path.resolve(process.env.HOME ?? "", ".config/yandex-cloud/config.yaml");
 
   if (!existsSync(path.basename(configPath))) {
-    await fs.mkdir(path.basename(configPath));
+    await fs.mkdir(path.basename(configPath), {
+      recursive: true,
+    });
   }
 
   const content = `current: default
