@@ -14,6 +14,8 @@ async function publish(config: Config, context: PublishContext) {
     },
     {
       cwd: context.cwd,
+      stdout: context.stdout,
+      stderr: context.stderr,
     }
   );
 }
