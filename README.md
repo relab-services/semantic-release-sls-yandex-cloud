@@ -47,55 +47,6 @@ As an alternative you can pass it via options.
 
 ## Examples
 
-### Sending messages to specific chats
-
-```json
-{
-    "plugins": [
-        "@semantic-release/commit-analyzer",
-        "@semantic-release/release-notes-generator",
-        [
-            "semantic-release-telegram-bot",
-            {
-                "success": {
-                    "message": "Here is the new release!"
-                },
-                "notifications": [
-                    {
-                        "chatIds": "PrivateChatId",
-                        "notifyOnFail": true,
-                        "notifyOnSuccess": false,
-                        "fail": {
-                            "message": "Oops!"
-                        }
-                    },
-                    {
-                        "chatIds": "PrivateChatId",
-                        "branch": "rc/*"
-                    },
-                    {
-                        "chatIds": "PublicChatId",
-                        "branch": "release/*"
-                    }
-                ]
-            }
-        ]
-    ]
-}
-```
-
-In this example:
-
--   Failure messages from all branches will be sent to `PrivateChatId` chat, also the messages changed to `Oops!`
--   Success messages from `rc` branches will be sent to `PrivateChatId` chat
--   Only a success message from `release` branches will be sent to `PublicChatId` chat
--   All success messages changed to `Here is the new release!`
-
-### Custom inline template
-
-Here is an example of the inline template, it uses [template](https://lodash.com/docs/4.17.15#template) function from `lodash`
-to render your message.
-
 ```json
 {
     "plugins": [
