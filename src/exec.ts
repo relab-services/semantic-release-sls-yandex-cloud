@@ -1,4 +1,5 @@
 import * as process from "process";
+const execa = require("execa");
 
 async function exec(
   script: string,
@@ -9,9 +10,7 @@ async function exec(
     stderr?: NodeJS.WritableStream;
   }
 ) {
-  const { execaCommand } = await import("execa");
-
-  const command = execaCommand(script, {
+  const command = execa(script, {
     shell: true,
     cwd: options?.cwd || process.cwd(),
     env,
