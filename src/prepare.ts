@@ -5,7 +5,7 @@ import * as fs from "fs/promises";
 
 async function prepare(config: Config) {
   const options = resolveConfig(config);
-  const configPath = path.resolve(process.env.HOME ?? "", "/.config/yandex-cloud/config.yaml");
+  const configPath = path.resolve(process.env.HOME ?? "", ".config/yandex-cloud/config.yaml");
 
   if (!existsSync(path.basename(configPath))) {
     await fs.mkdir(path.basename(configPath));
