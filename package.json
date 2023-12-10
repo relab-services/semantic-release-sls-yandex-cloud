@@ -2,6 +2,7 @@
   "name": "@sergeyzwezdin/semantic-release-sls-yandex-cloud",
   "version": "0.0.0-development",
   "description": "semantic-release plugin to deploy serverless app to yandex cloud",
+  "main": "lib/index.js",
   "files": [
     "README.md",
     "LICENSE",
