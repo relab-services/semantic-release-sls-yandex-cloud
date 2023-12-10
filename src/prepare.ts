@@ -10,13 +10,13 @@ async function prepare(config: Config, context: PrepareContext) {
 
   context.logger.log(`Config path: ${configPath}`);
 
-  context.logger.log(`Base path ${path.basename(configPath)} exists: ${existsSync(path.basename(configPath))}`);
-  if (!existsSync(path.basename(configPath))) {
-    await fs.mkdir(path.basename(configPath), {
+  context.logger.log(`Base path ${path.dirname(configPath)} exists: ${existsSync(path.dirname(configPath))}`);
+  if (!existsSync(path.dirname(configPath))) {
+    await fs.mkdir(path.dirname(configPath), {
       recursive: true,
     });
 
-    context.logger.log(`Base dir ${path.basename(configPath)} created`);
+    context.logger.log(`Base dir ${path.dirname(configPath)} created`);
   }
 
   const content = `current: default
