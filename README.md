@@ -6,7 +6,7 @@
 Add the plugin to your npm-project:
 
 ```bash
-$ npm @sergeyzwezdin/semantic-release-sls-yandex-cloud -D
+$ npm install @sergeyzwezdin/semantic-release-sls-yandex-cloud -D
 ```
 
 ## Usage
