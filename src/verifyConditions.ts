@@ -14,25 +14,25 @@ async function verifyConditions(config: Config) {
 
   if (!options.cloudId) {
     throw new SemanticReleaseError(
-      "No OAUTH token defined.",
+      "No Cloud ID defined.",
       "ENOCLOUDID",
-      "The OAuth token is neither defined in the options nor in the environment variable YC_CLOUD_ID. Please make sure that the parameter has been defined."
+      "The Cloud ID is neither defined in the options nor in the environment variable YC_CLOUD_ID. Please make sure that the parameter has been defined."
     );
   }
 
   if (!options.folderId) {
     throw new SemanticReleaseError(
-      "No OAUTH token defined.",
+      "No Folder ID defined.",
       "ENOFOLDERID",
-      "The OAuth token is neither defined in the options nor in the environment variable YC_FOLDER_ID. Please make sure that the parameter has been defined."
+      "The Folder ID is neither defined in the options nor in the environment variable YC_FOLDER_ID. Please make sure that the parameter has been defined."
     );
   }
 
   if (!options.defaultZone) {
     throw new SemanticReleaseError(
-      "No OAUTH token defined.",
+      "No default zone defined.",
       "ENODEFAULTZONE",
-      "The OAuth token is neither defined in the options nor in the environment variable YC_DEFAULT_ZONE. Please make sure that the parameter has been defined."
+      "The default zone is neither defined in the options nor in the environment variable YC_DEFAULT_ZONE. Please make sure that the parameter has been defined."
     );
   }
 }
