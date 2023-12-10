@@ -51,7 +51,7 @@
     "typescript": "^5.3.3"
   },
   "dependencies": {
-    "@semantic-release/error": "^4.0.0",
+    "@semantic-release/error": "^2.2.0",
     "execa": "^5.1.1"
   }
 }
