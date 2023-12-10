@@ -49,5 +49,8 @@
     "semantic-release-telegram-bot": "^2.0.1",
     "ts-node": "^10.9.2",
     "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "execa": "^8.0.1"
   }
 }
