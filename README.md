@@ -1,4 +1,5 @@
 # @sergeyzwezdin/semantic-release-sls-yandex-cloud
+
 [**semantic-release**](https://github.com/semantic-release/semantic-release) plugin to deploy serverless app to [yandex cloud](https://github.com/yandex-cloud/serverless-plugin)
 
 ## Install
@@ -15,14 +16,14 @@ The plugin can be configured in the [semantic-release configuration file](https:
 
 ```json
 {
-    "plugins": [
-        "@semantic-release/commit-analyzer",
-        "@semantic-release/release-notes-generator",
-        "@sergeyzwezdin/semantic-release-sls-yandex-cloud"
-    ]
+  "plugins": [
+    "@semantic-release/commit-analyzer",
+    "@semantic-release/release-notes-generator",
+    "@sergeyzwezdin/semantic-release-sls-yandex-cloud"
+  ]
 }
 ```
- 
+
 Once it configured, the plugin creates `~/.config/yandex-cloud/config.yaml` file and run `npx serverless deploy` for your project.
 
 ## Configuration
@@ -38,30 +39,30 @@ As an alternative you can pass it via options.
 
 ### Options
 
-| Option          | Description                                                                                       | Required | Default            |
-|:----------------|:--------------------------------------------------------------------------------------------------|:---------|:-------------------|
-| `token`         | OAuth token to deploy YC app                                                                      | yes      | `YC_OAUTH_TOKEN`   |
-| `cloudId`       | Cloud ID in Yandex Cloud                                                                          | yes      | `YC_CLOUD_ID`      |
-| `folderId`      | Folder ID in Yandex Cloud                                                                         | yes      | `YC_FOLDER_ID`     |
-| `defaultZone`   | [Availability zone](https://cloud.yandex.com/en/docs/overview/concepts/geo-scope) in Yandex Cloud | yes      | `YC_DEFAULT_ZONE`  |
+| Option        | Description                                                                                       | Required | Default           |
+| :------------ | :------------------------------------------------------------------------------------------------ | :------- | :---------------- |
+| `token`       | OAuth token to deploy YC app                                                                      | yes      | `YC_OAUTH_TOKEN`  |
+| `cloudId`     | Cloud ID in Yandex Cloud                                                                          | yes      | `YC_CLOUD_ID`     |
+| `folderId`    | Folder ID in Yandex Cloud                                                                         | yes      | `YC_FOLDER_ID`    |
+| `defaultZone` | [Availability zone](https://cloud.yandex.com/en/docs/overview/concepts/geo-scope) in Yandex Cloud | yes      | `YC_DEFAULT_ZONE` |
 
 ## Examples
 
 ```json
 {
-    "plugins": [
-        "@semantic-release/commit-analyzer",
-        "@semantic-release/release-notes-generator",
-        [
-            "@sergeyzwezdin/semantic-release-sls-yandex-cloud",
-            {
-                "token": "<-- YOUR OAUTH TOKEN -->",
-                "cloudId": "<-- CLOUD ID -->",
-                "folderId": "<-- FOLDER ID -->",
-                "defaultZone": "<-- ZONE -->"
-            }
-        ]
+  "plugins": [
+    "@semantic-release/commit-analyzer",
+    "@semantic-release/release-notes-generator",
+    [
+      "@sergeyzwezdin/semantic-release-sls-yandex-cloud",
+      {
+        "token": "<-- YOUR OAUTH TOKEN -->",
+        "cloudId": "<-- CLOUD ID -->",
+        "folderId": "<-- FOLDER ID -->",
+        "defaultZone": "<-- ZONE -->"
+      }
     ]
+  ]
 }
 ```
 

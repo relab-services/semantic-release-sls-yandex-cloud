@@ -1,4 +1,5 @@
 import * as process from "process";
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const execa = require("execa");
 
 async function exec(
@@ -8,7 +9,7 @@ async function exec(
     cwd?: string;
     stdout?: NodeJS.WritableStream;
     stderr?: NodeJS.WritableStream;
-  }
+  },
 ) {
   const command = execa(script, {
     shell: true,
@@ -26,6 +27,7 @@ async function exec(
   const result = await command;
 
   if (result.exitCode !== 0) {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
     throw new Error(result.stdout.trim());
   }
 
