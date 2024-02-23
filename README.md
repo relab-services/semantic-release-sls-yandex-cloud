@@ -1,4 +1,4 @@
-# @sergeyzwezdin/semantic-release-sls-yandex-cloud
+# @relab/semantic-release-sls-yandex-cloud
 
 [**semantic-release**](https://github.com/semantic-release/semantic-release) plugin to deploy serverless app to [yandex cloud](https://github.com/yandex-cloud/serverless-plugin)
 
@@ -7,7 +7,7 @@
 Add the plugin to your npm-project:
 
 ```bash
-$ npm install @sergeyzwezdin/semantic-release-sls-yandex-cloud -D
+$ npm install @relab/semantic-release-sls-yandex-cloud -D
 ```
 
 ## Usage
@@ -16,11 +16,7 @@ The plugin can be configured in the [semantic-release configuration file](https:
 
 ```json
 {
-  "plugins": [
-    "@semantic-release/commit-analyzer",
-    "@semantic-release/release-notes-generator",
-    "@sergeyzwezdin/semantic-release-sls-yandex-cloud"
-  ]
+    "plugins": ["@semantic-release/commit-analyzer", "@semantic-release/release-notes-generator", "@relab/semantic-release-sls-yandex-cloud"]
 }
 ```
 
@@ -50,19 +46,19 @@ As an alternative you can pass it via options.
 
 ```json
 {
-  "plugins": [
-    "@semantic-release/commit-analyzer",
-    "@semantic-release/release-notes-generator",
-    [
-      "@sergeyzwezdin/semantic-release-sls-yandex-cloud",
-      {
-        "token": "<-- YOUR OAUTH TOKEN -->",
-        "cloudId": "<-- CLOUD ID -->",
-        "folderId": "<-- FOLDER ID -->",
-        "defaultZone": "<-- ZONE -->"
-      }
+    "plugins": [
+        "@semantic-release/commit-analyzer",
+        "@semantic-release/release-notes-generator",
+        [
+            "@relab/semantic-release-sls-yandex-cloud",
+            {
+                "token": "<-- YOUR OAUTH TOKEN -->",
+                "cloudId": "<-- CLOUD ID -->",
+                "folderId": "<-- FOLDER ID -->",
+                "defaultZone": "<-- ZONE -->"
+            }
+        ]
     ]
-  ]
 }
 ```
 
